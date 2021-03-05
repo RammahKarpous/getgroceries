@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class, 'index'])->name('pages.index');
+Route::get('/login', [PagesController::class, 'index'])->name('auth.login');
+Route::get('/register', [PagesController::class, 'index'])->name('auth.register');

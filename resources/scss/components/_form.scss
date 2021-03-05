@@ -1,0 +1,48 @@
+$inputWidth: calc(100% - 12px);
+
+.form {
+    &__group {
+        margin: 10px 0;
+        position: relative;
+
+        .icon-parent {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+        }
+    }
+
+    &__image-upload {
+        position: relative;
+        margin-bottom: 20px;
+        @include square-size(60px);
+    }
+
+    &__label {
+        &--icon {
+            position: absolute;
+            background: transparentize($black, 0.25);
+            right: -9px;
+            bottom: -9px;
+            padding: 5px;
+            @include flex-center;
+            border-radius: 50%;
+        }
+    }
+
+    &__input {
+        margin-top: 5px;
+        @include inputWidth(100%, 15px);
+        border-radius: 5px;
+        border: 1px solid $light-gray;
+        outline: none;
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    .button {
+        margin-top: 5px;
+    }
+}

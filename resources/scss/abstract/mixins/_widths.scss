@@ -1,0 +1,9 @@
+@mixin inputWidth($width, $padding) {
+    padding: $padding;
+    width: calc(100% - #{$padding * 2 + 4});
+}
+
+@mixin square-size($size) {
+    width: $size;
+    height: $size;
+}

@@ -1,0 +1,6 @@
+@mixin loop($from: 1, $to, $class) {
+    @for $i from $from to $to {
+        .#{$class} {
+        }
+    }
+}

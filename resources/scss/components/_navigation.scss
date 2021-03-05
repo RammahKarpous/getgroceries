@@ -1,0 +1,48 @@
+.nav-placeholder {
+    height: 57px;
+}
+
+.nav {
+    background: $black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    &__list {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__link {
+        padding: 7px 12px 3px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        color: $white;
+        width: calc(100% / 4);
+        font-size: 13px;
+
+        .icon-parent {
+            height: 24px;
+        }
+
+        path {
+            fill: $white;
+        }
+
+        &--active {
+            color: $accent;
+
+            path {
+                fill: $accent;
+            }
+        }
+    }
+}

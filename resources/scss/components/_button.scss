@@ -1,0 +1,30 @@
+.button {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: $black;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+
+    &--primary {
+        background: $accent;
+    }
+
+    &--secondary {
+        background: $light-gray;
+    }
+
+    &--link {
+        background: transparent;
+        padding: 0;
+    }
+
+    &--logout {
+        position: fixed;
+        bottom: 64px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

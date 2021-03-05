@@ -1,0 +1,21 @@
+.mobile-header {
+    background: $accent;
+    padding: 15px 0;
+    margin-bottom: 20px;
+
+    .wrapper {
+        position: relative;
+
+        .arrow-back {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        p {
+            text-align: center;
+            margin: 0;
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@import "variables";
+
+// Abstract
+@import "abstract/media-queries";
+
+// Mixins
+@import "abstract/mixins/widths";
+@import "abstract/mixins/grid";
+@import "abstract/mixins/flex";
+
+// Base
+@import "base/text";
+@import "base/wrapper";
+
+// Components
+@import "components/button";
+@import "components/form";
+@import "components/mobile-header";
+@import "components/navigation";
+@import "components/nav-slider";
+
+// Pages
+@import "pages/profile";
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background-color: $bg-color;
+}
+
+.icon-parent {
+    @include square-size(24px);
+}

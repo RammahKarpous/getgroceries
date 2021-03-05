@@ -1,1 +1,265 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,500&display=swap);
+a {
+  text-decoration: none;
+}
 
+.bold {
+  font-weight: bold;
+}
+
+.wrapper {
+  width: calc(100% - 32px);
+  margin: auto;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #1a1818;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+}
+.button--primary {
+  background: #ffa500;
+}
+.button--secondary {
+  background: #e3e3e3;
+}
+.button--link {
+  background: transparent;
+  padding: 0;
+}
+.button--logout {
+  position: fixed;
+  bottom: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.form__group {
+  margin: 10px 0;
+  position: relative;
+}
+.form__group .icon-parent {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+.form__image-upload {
+  position: relative;
+  margin-bottom: 20px;
+  width: 60px;
+  height: 60px;
+}
+.form__label--icon {
+  position: absolute;
+  background: rgba(26, 24, 24, 0.75);
+  right: -9px;
+  bottom: -9px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.form__input {
+  margin-top: 5px;
+  padding: 15px;
+  width: calc(100% - 34px);
+  border-radius: 5px;
+  border: 1px solid #e3e3e3;
+  outline: none;
+}
+.form__input--hidden {
+  display: none;
+}
+.form .button {
+  margin-top: 5px;
+}
+
+.mobile-header {
+  background: #ffa500;
+  padding: 15px 0;
+  margin-bottom: 20px;
+}
+.mobile-header .wrapper {
+  position: relative;
+}
+.mobile-header .wrapper .arrow-back {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.mobile-header .wrapper p {
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+}
+
+.nav-placeholder {
+  height: 57px;
+}
+
+.nav {
+  background: #1a1818;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.nav__list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+.nav__link {
+  padding: 7px 12px 3px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: #fff;
+  width: calc(100% / 4);
+  font-size: 13px;
+}
+.nav__link .icon-parent {
+  height: 24px;
+}
+.nav__link path {
+  fill: #fff;
+}
+.nav__link--active {
+  color: #ffa500;
+}
+.nav__link--active path {
+  fill: #ffa500;
+}
+
+.nav-bar {
+  padding: 10px 0;
+}
+.nav-bar .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-bar__logo {
+  position: relative;
+  z-index: 2;
+}
+.nav-bar__toggle-bars {
+  width: 100%;
+  height: 3px;
+  background: #1a1818;
+  transition: 0.3s;
+}
+.nav-bar__toggle {
+  position: relative;
+  width: 25px;
+  height: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+.nav-bar__toggle.opened div {
+  background: #fff;
+}
+.nav-bar__toggle.opened div:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.nav-bar__toggle.opened div:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.nav-bar__toggle.opened div:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+.nav-bar__list {
+  position: fixed;
+}
+.nav-bar__list {
+  z-index: 1;
+  right: -100%;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #1a1818;
+  list-style: none;
+  margin: 0;
+  padding: 60px 0 0 0;
+  transition: 0.3s;
+}
+.nav-bar__list.show {
+  right: 0;
+}
+.nav-bar__link {
+  display: inline-block;
+  padding: 20px;
+  color: #fff;
+  width: calc(100% - 40px);
+}
+.nav-bar__link--active {
+  color: #ffa500;
+}
+
+.profile .user {
+  background: #ffa500;
+  box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.07);
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile .user__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.profile .user__wrapper h2,
+.profile .user__wrapper p {
+  margin: -5px 0;
+}
+.profile .user__wrapper p {
+  display: inline-block;
+}
+.profile .map {
+  width: 100%;
+  height: 200px;
+  background: rgba(26, 24, 24, 0.1);
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.profile .member-groups header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile .member-groups__group {
+  color: #1a1818;
+  margin-bottom: 5px;
+  display: block;
+  padding: 5px 20px;
+  background: #fff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: #fbfbfb;
+}
+
+.icon-parent {
+  width: 24px;
+  height: 24px;
+}
