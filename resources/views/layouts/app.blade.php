@@ -13,10 +13,12 @@
 
         @laravelPWA
     </head>
-    <body data-barba="wrapper">
-        <main data-barba="container" data-barba-namespace="">
+    <body>
+        <main>
             @guest
                 <x-burger-nav />
+                @else
+                <x-mobile-header :title="ucfirst(str_replace('-', ' ', Request::segment(1)))" />
             @endguest
 
             @yield('content')

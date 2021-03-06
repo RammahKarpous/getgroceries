@@ -11,7 +11,12 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components */ "./resources/js/components/index.js");
 
-(0,_components__WEBPACK_IMPORTED_MODULE_0__.toggleBurgerNav)();
+var paths = ["/", "/register", "/login"];
+paths.forEach(function (path) {
+  if (window.location.pathname === path) {
+    (0,_components__WEBPACK_IMPORTED_MODULE_0__.toggleBurgerNav)();
+  }
+});
 
 /***/ }),
 
@@ -43,6 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 var toggleBurgerNav = function toggleBurgerNav() {
   var burger = document.querySelector(".nav-bar__toggle");
   var navList = document.querySelector(".nav-bar__list");
+  console.log("Mounted");
   burger.addEventListener("click", function () {
     burger.classList.toggle("opened");
     navList.classList.toggle("show");

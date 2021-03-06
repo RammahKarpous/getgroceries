@@ -1,2 +1,9 @@
 import { toggleBurgerNav } from "./components";
-toggleBurgerNav();
+
+const paths = ["/", "/register", "/login"];
+
+paths.forEach((path) => {
+    if (window.location.pathname === path) {
+        toggleBurgerNav();
+    }
+});
