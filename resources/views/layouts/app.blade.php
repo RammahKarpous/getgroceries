@@ -13,12 +13,18 @@
 
         @laravelPWA
     </head>
-    <body>
-        @guest
-            <x-burger-nav />
-        @endguest
+    <body data-barba="wrapper">
+        <main data-barba="container" data-barba-namespace="">
+            @guest
+                <x-burger-nav />
+            @endguest
 
-        @yield('content')
+            @yield('content')
+
+            @auth
+                <x-mobile-nav />    
+            @endauth
+        </main>
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
