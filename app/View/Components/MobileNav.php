@@ -25,4 +25,38 @@ class MobileNav extends Component
     {
         return view('components.mobile-nav');
     }
+
+    public function links()
+    {
+        return [
+            [
+                'to' => 'profile',
+                'icon' => 'account',
+                'name' => 'Profile'
+            ],
+            [
+                'to' => 'profile',
+                'icon' => 'cart',
+                'name' => 'My list'
+            ],
+            [
+                'to' => 'profile',
+                'icon' => 'message',
+                'name' => 'Messages'
+            ],
+            [
+                'to' => 'settings.index',
+                'icon' => 'cog',
+                'name' => 'Settings'
+            ],
+        ];
+    }
+
+    public function pages()
+    {
+        return [
+            '/profile',
+            '/groups'
+        ];
+    }
 }

@@ -1,0 +1,10 @@
+.icon-parent {
+    @include square-size(24px);
+}
+
+.add-icon {
+    position: fixed;
+    bottom: 65px;
+    right: 15px;
+    @include square-size(50px);
+}

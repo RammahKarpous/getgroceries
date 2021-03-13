@@ -1,7 +1,7 @@
 <div class="form__group">
     @if ($type == 'text' || $type == 'email' || $type == 'password')
         <label for="{{ $for }}">{{ $label }}</label>
-        <input type="{{ $type }}" id="{{ $for }}" name="{{ $for }}" class="form__input form__input--{{ $type }}" value="{{ old($for) }}">
+        <input type="{{ $type }}" id="{{ $for }}" name="{{ $for }}" class="form__input form__input--{{ $type }}" value="{{ $value }}">
     @endif
 
     @if ($type == 'file')
@@ -9,20 +9,14 @@
             <img src="{{ 
                 auth()->user()->profile_picture ? 
                 asset('storage/users/' . auth()->user()->profile_picture) : 
-                asset('images/default-profile-picture.svg')}}" alt="">
+                asset('images/default-profile-picture.svg')}}" alt="current user profile picture">
 
-            <div class="icon-wrapper">
-                <x-icon icon="camera" colour="white" />
-            </div>
+            Upload image
         </label>
-        <input type="{{ $type }}" id="{{ $for }}" name="{{ $for }}" class="form__input form__input--{{ $type }}" value="{{ old($for) }}">
+        <input type="{{ $type }}" id="{{ $for }}" name="{{ $for }}" class="form__input form__input--{{ $type }}" value="{{ $value }}">
     @endif
 
     @error($for)
         <small> {{ $message }} </small>
     @enderror
-
-    {{-- @if ($type == 'password')
-        <p>add eye icon</p>
-    @endif --}}
 </div>

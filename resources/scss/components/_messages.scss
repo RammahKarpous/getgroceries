@@ -1,0 +1,41 @@
+.message {
+    &--error {
+        color: $red;
+    }
+
+    &--warning {
+        color: $accent;
+    }
+
+    &--success {
+        color: $green;
+    }
+}
+
+.toast {
+    padding: 11px;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 56px);
+    border-radius: 5px;
+
+    &--error {
+        color: $red;
+        background: lighten($red, 80%);
+        border: 1px solid $red;
+    }
+
+    &--warning {
+        color: $accent;
+        background: lighten($accent, 80%);
+        border: 1px solid $accent;
+    }
+
+    &--success {
+        color: $green;
+        background: lighten($green, 80%);
+        border: 1px solid $green;
+    }
+}

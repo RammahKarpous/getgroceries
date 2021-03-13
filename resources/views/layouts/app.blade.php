@@ -11,22 +11,29 @@
         <!-- Fonts -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-        @laravelPWA
+        {{-- @laravelPWA --}}
+        @livewireStyles
     </head>
     <body>
         <main>
             @guest
                 <x-burger-nav />
                 @else
-                <x-mobile-header :title="ucfirst(str_replace('-', ' ', Request::segment(1)))" />
+                <div class="mobile-header-placeholder"></div>
+                <x-mobile-header>
+                    @yield('title')
+                </x-mobile-header>
             @endguest
 
             @yield('content')
 
             @auth
-                <x-mobile-nav />    
+                <x-mobile-nav />
+                <div class="nav-placeholder"></div>
             @endauth
         </main>
+
+        @livewireScripts
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

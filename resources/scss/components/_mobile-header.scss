@@ -1,20 +1,24 @@
+.mobile-header-placeholder {
+    height: 45px;
+    margin-bottom: 20px;
+}
+
 .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: $accent;
-    padding: 15px 0;
+    padding: 10px 0;
     margin-bottom: 20px;
 
     .wrapper {
         position: relative;
 
-        .arrow-back {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
         p {
             text-align: center;
-            margin: 0;
+            margin: 0 auto;
+            width: 273px;
             font-weight: bold;
         }
     }

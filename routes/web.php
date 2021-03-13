@@ -2,25 +2,25 @@
 
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\GroupController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/', [ PagesController::class, 'index' ])->name('pages.index');
 
-Route::get('/', [PagesController::class, 'index'])->name('pages.index');
+// User routes
+Route::get('/profile', function () { return view('auth.profile'); })->name('profile')->middleware('auth');
+Route::get('/update', [ UserController::class, 'edit' ])->name('auth.edit');
+
+// Settings routes
+Route::get('/settings', [ SettingController::class, 'index' ])->name('settings.index')->middleware('auth');
+
+// Group routes
+Route::get('/groups', [ GroupController::class, 'index' ])->name('groups.index')->middleware('auth');
+Route::get('/group/create', [ GroupController::class, 'create' ])->name('groups.create')->middleware('auth');
+Route::get('/groups/{group:uuid}', [ GroupController::class, 'show' ])->name('groups.show')->middleware('auth');
+Route::get('/groups/{group:uuid}/add-member', [ GroupController::class, 'addMember' ])->name('groups.add-member')->middleware('auth');
 
 // Auth routes
-Route::get('/login', function () { return view('auth.login'); })->name('auth.login');
-Route::get('/register', function () { return view('auth.register'); })->name('auth.register');
-
-Route::get('/update', [UserController::class, 'edit'])->name('auth.edit');
-Route::post('/update', [UserController::class, 'update'])->name('auth.update');
-Route::get('/profile', function () { return view('auth.profile'); })->name('profile');
+Route::get('/login', function () { return view('auth.login'); })->name('login');
+Route::get('/register', function () { return view('auth.register'); })->name('register');

@@ -7,16 +7,14 @@ use Illuminate\View\Component;
 class MobileHeader extends Component
 {
 
-    public $title;
     public $type;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($title, $type = '')
+    public function __construct($type = false)
     {
-        $this->title = $title;
         $this->type = $type;
     }
 

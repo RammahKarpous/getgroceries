@@ -31,8 +31,8 @@ class BurgerNav extends Component
     {
         return [
             ['to' => 'pages.index', 'text' => 'Home'],
-            ['to' => 'auth.login', 'text' => 'Login'],
-            ['to' => 'auth.register', 'text' => 'Register']
+            ['to' => 'login', 'text' => 'Login'],
+            ['to' => 'register', 'text' => 'Register']
         ];
     }
 }

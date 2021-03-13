@@ -1,0 +1,22 @@
+$margins: (
+    "mt": "margin-top",
+    "mr": "margin-right",
+    "mb": "margin-bottom",
+    "ml": "margin-left",
+    "mx": "margin",
+    "my": "margin",
+);
+
+@each $name, $margin in $margins {
+    @for $i from 0 to 151 {
+        .#{$name}-#{$i} {
+            @if $name == "mx" {
+                #{$margin}: 0 #{$i}px;
+            } @else if ($name == "my") {
+                #{$margin}: #{$i}px 0;
+            } @else {
+                #{$margin}: #{$i}px;
+            }
+        }
+    }
+}

@@ -1,21 +1,28 @@
-<form action="{{ route($action) }}" method="{{ $method }}">
+<form method="{{ $method == 'put' ? 'post' : $method }}">
 
     @if ($formType == 'update')
-        <x-input for="profile_picture" type="file" label="" />
+        <x-input for="profile_picture" type="file" label="" method="{{ $method }}" value="{{ auth()->user()->profile_picture }}"/>
     @endif
 
     @if ($formType == 'register' || $formType == 'update')
-        <x-input for="first_name" type="text" label="First Name"/>
-        <x-input for="last_name" type="text" label="Last name"/>
+        <x-input for="first_name" type="text" label="First Name" method="{{ $method }}" value="{{ $method === 'put' ? auth()->user()->first_name : @old('first_name') }}"/>
+        <x-input for="last_name" type="text" label="Last name" method="{{ $method }}" value="{{ $method === 'put' ? auth()->user()->last_name : @old('last_name') }}"/>
     @endif
 
-    <x-input for="email" type="email" label="Email"/>
-    <x-input for="password" type="password" label="Password"/>
+    <x-input for="email" type="email" label="Email" method="{{ $method }}" value="{{ $method === 'put' ? auth()->user()->email : @old('email') }}"/>
+
+    @if ($formType == 'register' || $formType == 'login')
+        <x-input for="password" type="password" label="Password" method="{{ $method }}"/>
+    @endif
     
-    @if ($formType == 'register' || $formType == 'update')
+    @if ($formType == 'register')
         <x-input for="password_confirmation" type="password" label="Confirm password"/>
     @endif
 
-    <input type="submit" value="{{ $formType == 'register' ? 'Register' : 'Login' }}" class="button button--primary">
+    @if ($method === 'put')
+        @method('PUT')
+    @endif
+
+    <input type="submit" value="{{ ucfirst($formType) }}" class="button button--primary" />
     @csrf
 </form>

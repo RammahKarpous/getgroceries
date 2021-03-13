@@ -8,6 +8,9 @@
 @import "abstract/mixins/grid";
 @import "abstract/mixins/flex";
 
+// Loops
+@import "abstract/loops/margin";
+
 // Base
 @import "base/text";
 @import "base/wrapper";
@@ -18,6 +21,9 @@
 @import "components/mobile-header";
 @import "components/navigation";
 @import "components/nav-slider";
+@import "components/groups";
+@import "components/icons";
+@import "components/messages";
 
 // Pages
 @import "pages/profile";
@@ -26,8 +32,4 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     background-color: $bg-color;
-}
-
-.icon-parent {
-    @include square-size(24px);
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', auth()->user()->name)
+@section('title', 'Profile')
 
 @section('content')
 <div class="profile">
@@ -24,12 +24,14 @@
 
         <article class="map"></article>
 
-        {{-- <MemberGroups groups>
+        <x-member-groups type="with-action">
             <header>
                 <p>Member groups</p>
-                <Button to="/group/create" type="primary" text="Create a group" />
+                <a href="{{ route('groups.create') }}" class="button button--primary">Create a group</a>
             </header>
-        </MemberGroups> --}}
+
+            <livewire:groups limit=3>
+        </x-member-groups>
     </section>
 </div>
 @endsection
