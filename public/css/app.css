@@ -3854,6 +3854,13 @@ a {
   align-items: center;
   border-radius: 50%;
 }
+.form__label--checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
 .form__input {
   margin-top: 5px;
   padding: 15px;
@@ -3862,7 +3869,7 @@ a {
   border: 1px solid #e3e3e3;
   outline: none;
 }
-.form__input--file, .form__input--radio-button {
+.form__input--file, .form__input--radio-button, .form__input--checkbox {
   display: none;
 }
 .form__picture-wrapper {

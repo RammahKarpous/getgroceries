@@ -9,10 +9,15 @@ class Group extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = ['name', 'slug', 'uuid'];
 
     public function users()
     {
         return $this->belongsToMany(User::class);
+    }
+
+    public function shoppingLists()
+    {
+        return $this->hasMany(ShoppingList::class);
     }
 }

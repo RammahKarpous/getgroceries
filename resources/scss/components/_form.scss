@@ -28,6 +28,12 @@ $inputWidth: calc(100% - 12px);
             @include flex-center;
             border-radius: 50%;
         }
+
+        &--checkbox {
+            @include flex-center();
+            justify-content: flex-start;
+            gap: 10px;
+        }
     }
 
     &__input {
@@ -38,7 +44,8 @@ $inputWidth: calc(100% - 12px);
         outline: none;
 
         &--file,
-        &--radio-button {
+        &--radio-button,
+        &--checkbox {
             display: none;
         }
     }

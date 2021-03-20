@@ -35,7 +35,7 @@ class MobileNav extends Component
                 'name' => 'Profile'
             ],
             [
-                'to' => 'profile',
+                'to' => 'list.index',
                 'icon' => 'cart',
                 'name' => 'My list'
             ],
