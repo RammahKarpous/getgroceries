@@ -5,7 +5,7 @@
 
     <div class="form__group">
         <label for="name">Name</label>
-        <input type="text" wire:model="name" class="form__input form__input--text" name="name" id="name">
+        <input type="text" wire:model.debounce.500ms="name" class="form__input form__input--text" name="name" id="name">
         @error('name') <p class="message message--error"> {{ $message }} </p> @enderror
     </div>
 

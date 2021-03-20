@@ -11,12 +11,52 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components */ "./resources/js/components/index.js");
 
-var paths = ["/", "/register", "/login"];
-paths.forEach(function (path) {
+var loggedOutPaths = ["/", "/register", "/login"];
+var chatPaths = ["/chats"];
+loggedOutPaths.forEach(function (path) {
   if (window.location.pathname === path) {
     (0,_components__WEBPACK_IMPORTED_MODULE_0__.toggleBurgerNav)();
   }
 });
+chatPaths.forEach(function (path) {
+  if (window.location.pathname === path) {
+    // resizeTextarea();
+    (0,_components__WEBPACK_IMPORTED_MODULE_0__.chatFunctionalities)();
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/chat/chatFunctionalities.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/chat/chatFunctionalities.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var chatFunctionalities = function chatFunctionalities() {
+  // const galleryBtn = document.querySelector(".showGallery");
+  // const closeBtn = document.querySelector(".close-chat");
+  var contactsPanel = document.querySelector(".contacts");
+  var showContacts = document.querySelector(".chat-page__show-contacts");
+  showContacts.addEventListener("click", function (e) {
+    e.preventDefault();
+    contactsPanel.classList.toggle("hidden");
+    showContacts.classList.toggle("rotate");
+  }); // closeBtn.addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //     chatRoom.classList.add("hidden");
+  // });
+  // galleryBtn.addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //     console.log("show gallery");
+  // });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (chatFunctionalities);
 
 /***/ }),
 
@@ -28,10 +68,37 @@ paths.forEach(function (path) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "toggleBurgerNav": () => (/* reexport safe */ _toggleBurgerNav__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */   "toggleBurgerNav": () => (/* reexport safe */ _toggleBurgerNav__WEBPACK_IMPORTED_MODULE_0__.default),
+/* harmony export */   "resizeTextarea": () => (/* reexport safe */ _resizeTextarea__WEBPACK_IMPORTED_MODULE_1__.default),
+/* harmony export */   "chatFunctionalities": () => (/* reexport safe */ _chat_chatFunctionalities__WEBPACK_IMPORTED_MODULE_2__.default)
 /* harmony export */ });
 /* harmony import */ var _toggleBurgerNav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toggleBurgerNav */ "./resources/js/components/toggleBurgerNav.js");
+/* harmony import */ var _resizeTextarea__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./resizeTextarea */ "./resources/js/components/resizeTextarea.js");
+/* harmony import */ var _chat_chatFunctionalities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./chat/chatFunctionalities */ "./resources/js/components/chat/chatFunctionalities.js");
 
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/resizeTextarea.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/resizeTextarea.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var resizeTextarea = function resizeTextarea() {
+  var textarea = document.querySelector("textarea");
+  textarea.addEventListener("keypress", function () {
+    textarea.style.height = textarea.scrollHeight;
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (resizeTextarea);
 
 /***/ }),
 

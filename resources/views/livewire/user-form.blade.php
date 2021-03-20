@@ -20,8 +20,7 @@
         @error('profile_picture') <span class="message--error">{{ $message }}</span> @enderror
     </div>
 
-    <x-input for="first_name" type="text" label="First Name" value="{{ auth()->user()->first_name }}"/>
-    <x-input for="last_name" type="text" label="Last name" value="{{ auth()->user()->last_name }}"/>
+    <x-input for="name" type="text" label="First Name" value="{{ auth()->user()->name }}"/>
 
     <x-input for="email" type="email" label="Email" value="{{ auth()->user()->email }}"/>
 

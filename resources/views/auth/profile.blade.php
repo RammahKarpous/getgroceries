@@ -7,12 +7,12 @@
     <section class="wrapper">
         <article class="user">
             <div class="user__wrapper">
-                <img class="user__image" src="{{ asset('images/default-profile-picture.svg') }}" alt="{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}'s profile picture" />
+                <img class="user__image" src="{{ asset('images/default-profile-picture.svg') }}" alt="{{ auth()->user()->name }}'s profile picture" />
 
                 <div class="user__information">
-                    <h2 class="user__name">
-                        {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
-                    </h2>
+                    <h3 class="user__name">
+                        {{ auth()->user()->name }}
+                    </h3>
                     <small class="user__email">{{ auth()->user()->email }}</small>
                 </div>
             </div>

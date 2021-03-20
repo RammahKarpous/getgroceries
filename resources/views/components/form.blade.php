@@ -5,8 +5,7 @@
     @endif
 
     @if ($formType == 'register' || $formType == 'update')
-        <x-input for="first_name" type="text" label="First Name" method="{{ $method }}" value="{{ $method === 'put' ? auth()->user()->first_name : @old('first_name') }}"/>
-        <x-input for="last_name" type="text" label="Last name" method="{{ $method }}" value="{{ $method === 'put' ? auth()->user()->last_name : @old('last_name') }}"/>
+        <x-input for="name" type="text" label="Name" method="{{ $method }}" value="{{ $method === 'put' ? auth()->user()->name : @old('name') }}"/>
     @endif
 
     <x-input for="email" type="email" label="Email" method="{{ $method }}" value="{{ $method === 'put' ? auth()->user()->email : @old('email') }}"/>

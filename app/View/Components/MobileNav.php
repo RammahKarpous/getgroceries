@@ -40,9 +40,9 @@ class MobileNav extends Component
                 'name' => 'My list'
             ],
             [
-                'to' => 'profile',
+                'to' => 'chats.index',
                 'icon' => 'message',
-                'name' => 'Messages'
+                'name' => 'Chats'
             ],
             [
                 'to' => 'settings.index',

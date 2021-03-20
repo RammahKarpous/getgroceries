@@ -39,13 +39,8 @@ class GroupsForm extends Component
             'permission' => 'full_control'
         ]);
 
-        $this->createRelationship();
-    }
-
-    public function createRelationship()
-    {
         $this->reset(['name']);
-        $this->success = 'Your group has been added';        
+        $this->success = 'Your group has been added';
     }
 
     public function render()

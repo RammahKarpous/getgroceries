@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SettingController;
@@ -20,6 +21,10 @@ Route::get('/groups', [ GroupController::class, 'index' ])->name('groups.index')
 Route::get('/group/create', [ GroupController::class, 'create' ])->name('groups.create')->middleware('auth');
 Route::get('/groups/{group:uuid}', [ GroupController::class, 'show' ])->name('groups.show')->middleware('auth');
 Route::get('/groups/{group:uuid}/add-member', [ GroupController::class, 'addMember' ])->name('groups.add-member')->middleware('auth');
+
+// Chat routes
+Route::get('/chats', [ChatController::class, 'index'])->name('chats.index')->middleware('auth');
+Route::get('/chat/{ChatRoom:uuid}', [ChatController::class, 'show'])->name('chats.show')->middleware('auth');
 
 // Auth routes
 Route::get('/login', function () { return view('auth.login'); })->name('login');

@@ -1,9 +1,21 @@
-import { toggleBurgerNav } from "./components";
+import {
+    toggleBurgerNav,
+    resizeTextarea,
+    chatFunctionalities,
+} from "./components";
 
-const paths = ["/", "/register", "/login"];
+const loggedOutPaths = ["/", "/register", "/login"];
+const chatPaths = ["/chats"];
 
-paths.forEach((path) => {
+loggedOutPaths.forEach((path) => {
     if (window.location.pathname === path) {
         toggleBurgerNav();
+    }
+});
+
+chatPaths.forEach((path) => {
+    if (window.location.pathname === path) {
+        // resizeTextarea();
+        chatFunctionalities();
     }
 });

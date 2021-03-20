@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use App\Models\Message;
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -17,8 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'name',
         'profile_picture',
         'email',
         'password',
@@ -46,5 +47,10 @@ class User extends Authenticatable
     public function groups()
     {
         return $this->belongsToMany(Group::class, 'group_user')->withPivot(['role', 'permission']);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
     }
 }

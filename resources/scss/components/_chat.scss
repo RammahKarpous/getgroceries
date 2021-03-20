@@ -1,0 +1,170 @@
+.chat-page {
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 122px);
+
+    &__show-contacts {
+        position: absolute;
+        top: 12px;
+        right: 30px;
+        height: 24px;
+        transition: 0.3s;
+
+        &.rotate {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.chat-room {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.4s;
+    background: $bg-color;
+
+    &.hidden {
+        width: 0;
+    }
+}
+
+.search {
+    position: relative;
+
+    .form__input {
+        margin-top: 0;
+    }
+
+    .clear {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%) rotate(45deg);
+        border-radius: 50%;
+        height: 24px;
+        background: transparentize($black, 0.85);
+    }
+}
+
+.contacts {
+    padding: 20px;
+    background: lighten($bg-color, 5%);
+    height: calc(100% - 112px);
+    width: calc(100vw - 40px);
+    position: absolute;
+    top: 75px;
+    transition: 0.4s;
+    box-shadow: 0px 0px 10px rgba($black, 6%);
+
+    &.hidden {
+        top: 100vh;
+    }
+
+    h3 {
+        margin: 0;
+    }
+
+    &__contact {
+        @include flex-center();
+        justify-content: flex-start;
+        gap: 10px;
+        margin-bottom: 5px;
+        // background: $accent;
+        background: darken($bg-color, 3%);
+        padding: 5px 15px;
+        color: $black;
+
+        img {
+            width: 40px;
+        }
+    }
+}
+
+.chat {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+
+    // Chat header styling
+    &__header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% - 40px);
+        padding: 10px 20px;
+        background: $dark-gray;
+        display: flex;
+        align-items: center;
+        flex-flow: row;
+        gap: 10px;
+
+        .back-arrow {
+            height: 24px;
+        }
+
+        .info {
+            height: 37px;
+        }
+
+        img {
+            width: 40px;
+        }
+
+        small {
+            display: inline-block;
+            position: relative;
+            transform: translateY(-6px);
+        }
+
+        .button--icon {
+            float: right;
+        }
+
+        .close-chat {
+            height: 24px;
+        }
+    }
+
+    // Message area styling
+    &__message-area {
+        position: absolute;
+        z-index: 11;
+        bottom: 0;
+        left: 0;
+        width: calc(100% - 12px);
+        padding: 6px;
+        background: $dark-gray;
+        @include flex-space-between-center();
+
+        .button--icon {
+            height: 24px;
+        }
+    }
+
+    &__textarea {
+        overflow: hidden;
+        resize: none;
+        padding: 10px;
+        width: calc(100% - 70px);
+        border-radius: 5px;
+        height: 20px;
+        border: 1px solid darken($dark-gray, 10%);
+    }
+
+    &__send-icon {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+
+    &__camera-icon {
+        margin-left: 8px;
+    }
+}
