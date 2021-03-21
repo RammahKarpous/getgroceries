@@ -1,0 +1,9 @@
+.shopping-lists {
+    &--list {
+        padding: 15px;
+        background: $white;
+        margin-bottom: 5px;
+        color: $black;
+        @include flex-space-between-center();
+    }
+}

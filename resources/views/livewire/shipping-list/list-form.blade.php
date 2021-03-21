@@ -7,7 +7,7 @@
         
         <div class="form__group">
             <select name="group" id="group" wire:model="group" class="form__input form__input--text">
-                <option selected disabled>Please select a group</option>
+                <option selected="selected">Please select a group</option>
                 @if (count(auth()->user()->groups) > 0)
                     @foreach (auth()->user()->groups as $group)
                         <option value="{{ $group->id }}">{{ $group->name }}</option>
@@ -16,6 +16,7 @@
                     <option>There are no shopping lists</option>
                 @endif
             </select>
+            @error('group') <p class="message--error">Please select a group</p>@enderror
         </div>
 
         <div class="form__group">

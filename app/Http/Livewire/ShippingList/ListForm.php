@@ -18,26 +18,12 @@ class ListForm extends Component
     public function addList()
     {
 
-        if ($this->withoutGroup == null || $this->group == null) {
-            
-            $list = ShoppingList::create([
-                'name' => $this->name,
-                'uuid' => Str::random(),
-                'user_id' => auth()->user()->id
-            ]);
-            
-            $this->success = "Your list has been created";
-        } else {
-            $list = ShoppingList::create([
-                'name' => $this->name,
-                'uuid' => Str::random(),
-                'group_id' => $this->group,
-                'user_id' => auth()->user()->id
-            ]);
-            
-            $this->success = "Your group list has been created";
-        }
-
+        $list = ShoppingList::create([
+            'name' => $this->name,
+            'uuid' => Str::random(),
+            'group_id' => $this->group,
+            'user_id' => auth()->user()->id
+        ]);
 
         return redirect()->route('list.show', $list);
     }

@@ -4182,6 +4182,16 @@ a {
   margin-bottom: 15px;
 }
 
+.shopping-lists--list {
+  padding: 15px;
+  background: #fff;
+  margin-bottom: 5px;
+  color: #1a1818;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
