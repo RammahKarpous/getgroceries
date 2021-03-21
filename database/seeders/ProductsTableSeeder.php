@@ -14,46 +14,30 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('product')->insert([
+        DB::table('products')->insert([
             [
-                'name' => 'coffee',
+                'product' => 'coffee',
                 'category_id' => 1
             ],
             [
-                'name' => 'tea',
+                'product' => 'tea',
                 'category_id' => 1
             ],
             [
-                'name' => 'sandwich loaves',
+                'product' => 'sandwich loaves',
                 'category_id' => 2
             ],
             [
-                'name' => 'dinner rolls',
+                'product' => 'dinner rolls',
                 'category_id' => 2
             ],
             [
-                'name' => 'sandwich loaves',
+                'product' => 'sandwich loaves',
                 'category_id' => 2
             ],
             [
-                'name' => 'tortillas',
+                'product' => 'tortillas',
                 'category_id' => 2
-            ],
-            [
-                'name' => 'bagels',
-                'category_id' => 2
-            ],
-            [
-                'name' => 'bagels',
-                'category_id' => 3
-            ],
-            [
-                'name' => 'bagels',
-                'category_id' => 3
-            ],
-            [
-                'name' => 'bagels',
-                'category_id' => 3
             ],
         ]);
     }
